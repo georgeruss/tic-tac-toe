@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #cecece;
+}
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.cell{
+    width: 75px;
+    height: 75px;
+    border: 2px solid;
+    box-shadow: 0 0 0 2px;
+    line-height: 75px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#cellContainer{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    width:225px;
+    margin: auto;
+    box-shadow: #fff 4px 4px 0 0,#000 -4px -4px 0 0px;
+}
+
+#gameContainer{
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+}
+
+.fancy {
+    box-shadow: #000 0px 2px 0 0px;
+    position: relative;
+    white-space: nowrap;
+    text-shadow: #000 0px 1px 1px;
+    &:after {
+      --deco-height: 0.3125em;
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: calc(var(--deco-height) * -0.625);
+      height: var(--deco-height);
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+      background-size: auto 100%;
+      background-repeat: round;
+      background-position: 0em;
+    }
+    
+  }
+  
+.button-50 {
+    font-family: "Permanent Marker", cursive;
+    outline: none;
+    user-select: none;
+    color: #000;
+    font-size: 1.5rem;
+    letter-spacing: 0.04rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: .5rem;
+    border: .2rem solid #000;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%; 
+      top: 0;
+      left: 0;
+      transform: scale(0);
+      transition: transform .3s ease-in;
+      mix-blend-mode: difference;
+      background: radial-gradient(
+        circle at center, 
+        #fff 24%, 
+        #000 25%, 
+        #000 100%);
+    }  
+  
+    box-shadow: 0 3px 0 0 #000;
+    &:active {
+      top: 3px;
+      box-shadow: none;
+    }
+}
+
+.button-50:focus {
+  text-decoration: none;
+}
+
+.button-50:hover {
+  text-decoration:underline;
+}
+
+.button-50:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 1;
+}
+
